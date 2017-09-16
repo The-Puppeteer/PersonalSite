@@ -1,0 +1,105 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
+        <script src="circle.js"></script> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+        .card{
+          width:100%;
+        }
+
+        .parallax-container {
+          height:650px;
+        }
+        canvas{
+            border: solid 2px #37474f;
+        }
+        </style>
+
+
+      
+    </head>
+
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script type="text/javascript" src="../../init.js"></script>
+
+        
+        <nav>
+          <div class="nav-wrapper  cyan darken-1">
+            <ul id="nav-mobile" class="left">
+            <a href="../../index.html" class="brand-logo flow-text center">Dalton</a>
+            <a href="#" data-activates="slide-out" class=" show-on-medium-and-up button-collapse waves-effect waves-light cyan left"><i class="material-icons left">menu</i>Menu</a>
+            
+            
+            <ul id="slide-out" class="side-nav blue-grey darken-3">
+              <li><div class="user-view"></div></li>
+              <div class="background"></div>
+                <li><a  class="white-text" href="../../index.html">Bio</a></li>
+                <li><div class="divider"></div></li>
+                <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">tv</i>Graphics Labs</div>
+                    <div class="collapsible-body  blue-grey darken-3"><span><a href="#">Lab 1: Circle Clicker</a></span></div>
+                </li>
+            </ul>
+            </li>
+            </ul>
+
+          </div>
+          </nav>
+
+
+
+        <div class="parallax-container">
+            <div class="parallax"><img src="../../resources/greyblue.jpg"></div>
+            <div class="container section">
+                <div class="row">
+                    <div class="col s12 m6 l4 full-page ">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <span class="card-title black-text">Circle Lab</span>
+                                <p>
+                                     Left click within the border to create a black circle. Right click to randomize the colors of each circle.
+                                </p>
+                                <a class="waves-effect waves-light btn cyan lighten-1" id="clear">Clear</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="canvas-parent" class="col s12 m6 l8">
+                        <canvas id="swag" width="800" height="800" oncontextmenu="return false">:(</canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="border: 1px solid black;">
+              <div id="canvas-parent" class="col s12 m6 l8">
+                <canvas id="swag" width="600" height="600"> 
+                </canvas>
+            </div>
+            </div>
+      </div>
+
+      <footer>    
+            <div class="col l4 offset-l2 s12"> 
+                <div class="footer-copyright cyan">
+                    <div class="container center">
+                    © Dalton Haselgrove 2017
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+    </body>
+</html>
