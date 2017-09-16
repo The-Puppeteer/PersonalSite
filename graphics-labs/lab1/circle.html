@@ -6,6 +6,7 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
         <script src="circle.js"></script> 
+        <link href="../../index.css" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <style>
         .card{
@@ -31,6 +32,8 @@
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
       <script type="text/javascript" src="../../init.js"></script>
 
+
+    <div class="page-flexbox-wrapper">
         
         <nav>
           <div class="nav-wrapper  cyan darken-1">
@@ -49,6 +52,7 @@
                   <div class="collapsible-header"><i class="material-icons">tv</i>Graphics Labs</div>
                     <div class="collapsible-body  blue-grey darken-3"><span><a href="#">Lab 1: Circle Clicker</a></span></div>
                 </li>
+                </ul>
             </ul>
             </li>
             </ul>
@@ -70,20 +74,16 @@
                                      Left click within the border to create a black circle. Right click to randomize the colors of each circle.
                                 </p>
                                 <a class="waves-effect waves-light btn cyan lighten-1" id="clear">Clear</a>
+                                <a class="waves-effect waves-light btn cyan lighten-1" id="ran">Randomize Color</a>
                             </div>
                         </div>
                     </div>
                     <div id="canvas-parent" class="col s12 m6 l8">
-                        <canvas id="swag" width="800" height="800" oncontextmenu="return false">:(</canvas>
+                        <canvas id="swag" width="800" height="700" oncontextmenu="return false">:(</canvas>
                     </div>
                 </div>
             </div>
-            <div class="border: 1px solid black;">
-              <div id="canvas-parent" class="col s12 m6 l8">
-                <canvas id="swag" width="600" height="600"> 
-                </canvas>
-            </div>
-            </div>
+
       </div>
 
       <footer>    
@@ -100,6 +100,7 @@
 
 
 
+</div>
 
     </body>
 </html>

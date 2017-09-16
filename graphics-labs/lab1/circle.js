@@ -28,6 +28,14 @@ window.onload = function init() { //begins during the loading of the page
         clout = [];
     }, false);
 
+    document.getElementById('ran').addEventListener('click', function(){
+        ranColor();
+        return false;
+    }, false);
+
+
+
+
 };
 
 function Circle(x, y, r, color) { //defines circle object
