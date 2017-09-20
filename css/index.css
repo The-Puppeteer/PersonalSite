@@ -2,18 +2,21 @@
   overflow: visible;
 }
 
-.page-flexbox-wrapper {
+/*.page-flexbox-wrapper {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
+}*/
 
-.parallax img {
+/*.parallax img {
     @media #{$small-and-down} { max-width: 200%; }
     @media #{$medium-and-up} { width: 100%; }
 
 }
-
+*/
+/*.parallax-container {
+      height: 700px;
+    }*/
 
  body {
      display: flex;
