@@ -51,6 +51,12 @@
         .parallax-container {
           height:100%;
         }
+
+        .page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
         </style>
 
 
@@ -64,8 +70,9 @@
       <script type="text/javascript" src="../../js/materialize.js"></script>
       <script type="text/javascript" src="../../init.js"></script>
 
-        
-        <nav>
+      <div class="page-flexbox-wrapper">
+        <header>
+          <nav>
           <div class="nav-wrapper  cyan darken-1">
             <ul id="nav-mobile" class="left">
             <a href="../../index.html" class="brand-logo flow-text center">Dalton H.</a>
@@ -90,11 +97,13 @@
 
           </div>
           </nav>
+        </header>
 
 
 <!--           Image card containing general bio information
  -->        <!-- <div class="parallax-container">
               <div class="parallax"><img src="../../resources/greyblue.jpg"></div> -->
+            <main>
               <div class="container section">
               <div class="row">
                     <div class="col s12 m6 l4 full-page ">
@@ -131,6 +140,7 @@
                     </div>
                 </div>
             </div>
+          </main>
 
 
       <footer>    
@@ -142,6 +152,10 @@
                 </div>
             </div>
       </footer>
+
+      
+      </div>
+
 
     </body>
   </html>
