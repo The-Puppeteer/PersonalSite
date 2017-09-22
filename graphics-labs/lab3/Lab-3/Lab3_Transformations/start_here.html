@@ -1,0 +1,174 @@
+<!-- Dalton Haselgrove
+Jamie Learey
+CS445 Graphics
+Jenny Orr
+Willamette University, 2017 -->
+<html>
+
+    <head>
+    <title>Dalton Haselgrove</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../../../../css/index.css"  media="screen,projection"/>
+
+      <link type="text/css" rel="stylesheet" href="../../../../css/materialize.css"  media="screen,projection"/>
+      
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="https://use.fontawesome.com/c124753d69.js"></script>
+      <style>
+        .card{
+          width:100%;
+        }
+
+        .parallax-container {
+          height: 1200px;
+        }
+        </style>
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <script id="vertex-shader" type="x-shader/x-vertex">
+       attribute vec4 vPosition;
+       attribute vec4 vColor;
+       uniform   mat4 uProjection; // projection matrix
+       uniform   mat4 uModel_view; // model view matrix
+ 
+       varying vec4 color;
+            
+       void main() 
+       {
+           color = vColor;
+           gl_Position = uProjection * uModel_view * vPosition;
+       } 
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        uniform vec4 uColor;
+
+        void
+        main()
+        {
+             gl_FragColor = uColor;
+        }
+    </script>
+    
+    <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../Common/initShaders.js"></script>
+    <script type="text/javascript" src="../Common/MV.js"></script>
+    <script type="text/javascript" src="../Common/MatrixStack.js"></script>
+    
+ <!-- TO DO: ADD MATRIX STACK AND SHAPES-->
+ 
+    <script type="text/javascript" src="geometry/Cube.js"></script>
+    <script type="text/javascript" src="geometry/Cylinder.js"></script>
+   
+    <script type="text/javascript" src="geometry/Shapes.js"></script>
+    <script type="text/javascript" src="render_scene.js"></script>
+    </head>
+
+    <body>
+
+    <body background="../../../../resources/greyblue.jpg">
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script type="text/javascript" src="../../../../init.js"></script>
+
+
+    <div class="page-flexbox-wrapper">
+        
+      <header>
+        <nav>
+          <div class="nav-wrapper  cyan darken-1">
+            <ul id="nav-mobile" class="left">
+            <a href="../../../../index.html" class="brand-logo flow-text center">Dalton H.</a>
+            <a href="#" data-activates="slide-out" class=" show-on-medium-and-up button-collapse waves-effect waves-light cyan left"><i class="material-icons left">menu</i>Menu</a>
+            
+            
+            <ul id="slide-out" class="side-nav blue-grey darken-3">
+              <li><div class="user-view"></div></li>
+              <div class="background"></div>
+                <li><a  class="white-text" href="../../../../index.html">Bio</a></li>
+                <li><div class="divider"></div></li>
+                <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">tv</i>Graphics Labs</div>
+                    <div class="collapsible-body  blue-grey darken-3"><span><a href="../../../lab1/circle.html">Lab 1: Circle Clicker</a></span>
+                    <span><a href="../../../lab2/shapes.html">Lab 2: 3d Shape Rendering</a></span>
+                    <span><a href="#">Lab 3: 3d Transformations</a></span>
+                    </div>
+                </li>
+                </ul>
+            </ul>
+            </li>
+            </ul>
+
+          </div>
+          </nav>
+        </header>
+
+
+
+        <!-- <div class="parallax-container">
+            <div class="parallax"><img src="../../resources/greyblue.jpg"></div> -->
+          <main>
+            <div class="container section">
+                <div class="row">
+                    <div class="col s12 m6 l4 full-page">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <span class="card-title black-text">Transformation Lab</span>
+                                <p>
+                                     Adjust the hand by moving the sliders
+                                </p>
+                                <div>
+                                    <input id="viewslider" type="range" value="0" min="0" max="360">Rotate Scene</input><br>
+                                    <input id="thumbslider" type="range" value="20" min="20" max="60">Actuate Thumb</input><br>
+                                    <input id="indexslider" type="range" value="10" min="10" max="70">Actuate Index Finger</input><br>
+                                    <input id="midslider" type="range" value="12" min="12" max="70">Actuate Middle Finger</input><br>
+                                    <input id="ringslider" type="range" value="12" min="12" max="70">Actuate Ring Finger</input><br>
+                                    <input id="pinkyslider" type="range" value="12" min="12" max="70">Actuate Pinky Finger</input><br>
+                                    <input id="wristslider" type="range" value="0" min="-80" max="90">Bend Wrist</input><br> 
+                                    <input id="rotateslider" type="range" value="0" min="-80" max="90">Rotate Wrist</input><br> 
+
+
+        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="canvas-parent" class="col s12 m6 l6">
+                        <canvas id="gl-canvas" width="650" height="650" oncontextmenu="return false">:(</canvas>
+                    </div>
+                </div>
+            </div>
+          </main>
+
+      
+
+      <footer>    
+            <div class="col l4 offset-l2 s12"> 
+                <div class="footer-copyright cyan">
+                    <div class="container center">
+                    &copy; Dalton Haselgrove 2017
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+</div>
+
+    <!-- <div>
+        <h2> Lab 3: Transformations</h2>
+
+        <canvas id="gl-canvas" width="512" height="512">
+            Oops ... your browser doesn't support the HTML5 canvas element
+        </canvas>
+    </div> -->
+
+        
+        
+
+    </body>
+</html>
