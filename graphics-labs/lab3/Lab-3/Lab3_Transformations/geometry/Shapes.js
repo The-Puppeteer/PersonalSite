@@ -9,7 +9,7 @@
 var Shapes = {};   // set up Shapes namespace
 
 Shapes.cube = new Cube();  // global
-Shapes.cylinder = new Cylinder(15);
+Shapes.cylinder = new Cylinder(60);
 
 Shapes.initShapes = function () {
     Shapes.initBuffers(Shapes.cube);

@@ -48,11 +48,6 @@ window.onload = function init()
         rotAngle = document.getElementById("rotateslider").value;
     });
 
-    document.getElementById("numtri").addEventListener("input", function(){
-        numtri = document.getElementById("numtri".value;
-    });
-
-
 
 
     canvas = document.getElementById("gl-canvas");
