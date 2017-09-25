@@ -7,13 +7,19 @@
  */
 
 var Shapes = {};   // set up Shapes namespace
+var numtri = 30;
 
 Shapes.cube = new Cube();  // global
-Shapes.disk = new Disk(30);
-Shapes.cone = new Cone(60);
-Shapes.cylinder = new Cylinder(30);
+Shapes.disk = new Disk(numtri);
+Shapes.cone = new Cone(numtri);
+Shapes.cylinder = new Cylinder(numtri);
 // TO DO:  DECLARE OTHER SHAPES
-
+window.onload = function init()
+{
+	document.getElementById("numtri").addEventListener("input", function(){
+		numtri = document.getElementById("numtri").value;
+	});
+};
 /**
  * Create and load the buffers for all of the primitive shapes.
  * @return {undefined}

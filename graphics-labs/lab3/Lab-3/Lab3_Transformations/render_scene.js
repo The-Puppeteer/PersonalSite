@@ -11,6 +11,7 @@ var viewMat;     // view matrix (will get to in Lab 4)
 var actuators = [20,10,12,12,12];//thumb is i[0] 1-4 is index-pinky
 var wristAngle = 30;
 var rotAngle = 0;
+var numtri = 30;
 
 window.onload = function init()
 {
@@ -45,6 +46,10 @@ window.onload = function init()
 
     document.getElementById("rotateslider").addEventListener("input", function(){
         rotAngle = document.getElementById("rotateslider").value;
+    });
+
+    document.getElementById("numtri").addEventListener("input", function(){
+        numtri = document.getElementById("numtri".value;
     });
 
 
