@@ -1,0 +1,7 @@
+thr0wgr4mp4fr0mth3d4n3
+SundayCruddySunday
+childrenofalesserclod
+Future-Drama
+crookandladder9176
+
+awk script: cat simpsons.txt | awk -F '"' '{print $2}' | sort | uniq >> simpsonspass.txt | cat simpsonspass.txt | sed 's/ //g' >> simpsonspass.txt | cat simpsonspass.txt | sed -e 's/\(.*\)/\L\1/' | sort | uniq | cat simpsonspass.txt
