@@ -10,25 +10,25 @@
       <link type="text/css" rel="stylesheet" href="../css/index.css"  media="screen,projection"/>
       <script src="https://use.fontawesome.com/c124753d69.js"></script>
       <script type="text/javascript">
-        // function isValid(i){
-        // var password = document.getElementById('password').value;
-        // hashes = [
-        //   "thr0wgr4mp4fr0mth3d4n3",
-        //   "SundayCruddySunday",
-        //   "childrenofalesserclod",
-        //   "Future-Drama",
-        //   "crookandladder9176"
-        // ]
-        // if (password === hashes[i] )
-        //   {
-        //     Materialize.toast('Correct password!', 4000)
-        //   }
-        // else
-        //   {
-        //     Materialize.toast('Wrong password', 4000)
-        //   }
-        // }
-        var _0xf66d=["\x76\x61\x6C\x75\x65","\x70\x61\x73\x73\x77\x6F\x72\x64","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x74\x68\x72\x30\x77\x67\x72\x34\x6D\x70\x34\x66\x72\x30\x6D\x74\x68\x33\x64\x34\x6E\x33","\x53\x75\x6E\x64\x61\x79\x43\x72\x75\x64\x64\x79\x53\x75\x6E\x64\x61\x79","\x63\x68\x69\x6C\x64\x72\x65\x6E\x6F\x66\x61\x6C\x65\x73\x73\x65\x72\x63\x6C\x6F\x64","\x46\x75\x74\x75\x72\x65\x2D\x44\x72\x61\x6D\x61","\x63\x72\x6F\x6F\x6B\x61\x6E\x64\x6C\x61\x64\x64\x65\x72\x39\x31\x37\x36","\x43\x6F\x72\x72\x65\x63\x74\x20\x70\x61\x73\x73\x77\x6F\x72\x64\x21","\x74\x6F\x61\x73\x74","\x57\x72\x6F\x6E\x67\x20\x70\x61\x73\x73\x77\x6F\x72\x64"];function isValid(_0x9d5cx2){var _0x9d5cx3=document[_0xf66d[2]](_0xf66d[1])[_0xf66d[0]];hashes= [_0xf66d[3],_0xf66d[4],_0xf66d[5],_0xf66d[6],_0xf66d[7]];if(_0x9d5cx3=== hashes[_0x9d5cx2]){Materialize[_0xf66d[9]](_0xf66d[8],4000)}else {Materialize[_0xf66d[9]](_0xf66d[10],4000)}}
+        function isValid(i){
+        var password = document.getElementById('password'+ i).value;
+        hashes = [
+          "thr0wgr4mp4fr0mth3d4n3",
+          "SundayCruddySunday",
+          "childrenofalesserclod",
+          "Future-Drama",
+          "crookandladder9176"
+        ]
+        if (password === hashes[i] )
+          {
+            Materialize.toast('Correct password!', 4000)
+          }
+        else
+          {
+            Materialize.toast('Wrong password', 4000)
+          }
+        }
+        // var _0xf66d=["\x76\x61\x6C\x75\x65","\x70\x61\x73\x73\x77\x6F\x72\x64","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x74\x68\x72\x30\x77\x67\x72\x34\x6D\x70\x34\x66\x72\x30\x6D\x74\x68\x33\x64\x34\x6E\x33","\x53\x75\x6E\x64\x61\x79\x43\x72\x75\x64\x64\x79\x53\x75\x6E\x64\x61\x79","\x63\x68\x69\x6C\x64\x72\x65\x6E\x6F\x66\x61\x6C\x65\x73\x73\x65\x72\x63\x6C\x6F\x64","\x46\x75\x74\x75\x72\x65\x2D\x44\x72\x61\x6D\x61","\x63\x72\x6F\x6F\x6B\x61\x6E\x64\x6C\x61\x64\x64\x65\x72\x39\x31\x37\x36","\x43\x6F\x72\x72\x65\x63\x74\x20\x70\x61\x73\x73\x77\x6F\x72\x64\x21","\x74\x6F\x61\x73\x74","\x57\x72\x6F\x6E\x67\x20\x70\x61\x73\x73\x77\x6F\x72\x64"];function isValid(_0x9d5cx2){var _0x9d5cx3=document[_0xf66d[2]](_0xf66d[1])[_0xf66d[0]];hashes= [_0xf66d[3],_0xf66d[4],_0xf66d[5],_0xf66d[6],_0xf66d[7]];if(_0x9d5cx3=== hashes[_0x9d5cx2]){Materialize[_0xf66d[9]](_0xf66d[8],4000)}else {Materialize[_0xf66d[9]](_0xf66d[10],4000)}}
       </script>
 
       <!--Let browser know website is optimized for mobile-->
@@ -89,27 +89,27 @@
                 <p> We have received a password dump containing user passwords that have been hashed. We know that the passwords are related to The Simpsons episodes and characters.</p>
                 <form name="PasswordField" action="">
                   Hash 1: 8f6b7532d229f262b894cb58cbb7fabc
-                  <input type="password" id="password" name="password">
+                  <input type="password" id="password0" name="password">
                   <input class="waves-effect waves-light btn" value="Check answer" onclick="isValid(0);"><br>
                 </form>
                 <form name="PasswordField" action="show">
                   Hash 2: 7e0c25870813c064629ddb021412c2a1
-                  <input type="password" id="password" name="password">
+                  <input type="password" id="password1" name="password">
                   <input class="waves-effect waves-light btn" value="Check answer" onclick="isValid(1);"><br>
                 </form>
                 <form name="PasswordField" action="">
                   Hash 3: 8c34f11061b404240e123123740f7626
-                  <input type="password" id="password" name="password">
+                  <input type="password" id="password2" name="password">
                   <input class="waves-effect waves-light btn" value="Check answer" onclick="isValid(2);"><br>
                 </form>
                 <form name="PasswordField" action="">
                   Hash 4: 817a505945dd2e982744215f11793d87
-                  <input type="password" id="password" name="password">
+                  <input type="password" id="password3" name="password">
                   <input class="waves-effect waves-light btn" value="Check answer" onclick="isValid(3);"><br>
                 </form>
                 <form name="PasswordField" action="">
                   Hash 5: 76f98b739a254d728c3e6995f70fc233
-                  <input type="password" id="password" name="password">
+                  <input type="password" id="password4" name="password">
                   <input class="waves-effect waves-light btn" value="Check answer" onclick="isValid(4);"><br>
                 </form>
               </div>  
