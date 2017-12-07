@@ -1,27 +1,35 @@
+<?php
+
+// Handle Post
+if (count($_POST))
+{
+    // Parse login.txt
+    $loginData = file('login.txt');
+    $accessData = array();
+    foreach ($loginData as $line) {
+        list($username, $password) = explode(',', $line);
+        $accessData[trim($username)] = trim($password);
+    }
+
+    // Parse form input
+    $mid = isset($_POST['mid']) ? $_POST['mid'] : '';
+    $mpassword = isset($_POST['mpassword']) ? $_POST['mpassword'] : '';
+
+    // Check input versus login.txt data
+    if (array_key_exists($mid, $accessData) && $mpassword == $accessData[$mid]) {
+        echo "Username and Password is correct";
+    } else {
+        echo "Invalid username and/or password";
+    }
+}
+
+?>
+
   <!DOCTYPE html>
   <html>
     <title>CS389 Group 7</title>
 
     <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="../css/index.css"  media="screen,projection"/>
-      <script src="https://use.fontawesome.com/c124753d69.js"></script>
-      <script type="text/javascript">
-        function isValid(){
-        var password = document.getElementById('password').value;
-        if (password === "password2019")
-          {
-            Materialize.toast('Correct password!', 4000)
-          }
-        else
-          {
-            Materialize.toast('Wrong password', 4000)
-          }
-        }
-      </script>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -30,6 +38,11 @@
         width:100%;
       }
       </style>
+      <script type="text/javascript">
+    document.getElementById("myButton1").onclick = function () {
+        location.href = "http://ec2-34-216-92-116.us-west-2.compute.amazonaws.com/";
+    };
+</script>
 
 
       
@@ -64,7 +77,7 @@
                       <span><a href="index.html">Problem 1</a></span>
                     </div>
                     <div class="collapsible-body  blue-grey darken-3">
-                      <span><a href="login.php">Problem 2</a></span>
+                      <span><a href="phppass.php">Problem 2</a></span>
                     </div>
                 </li>
             </ul>
@@ -84,8 +97,8 @@
                 <form name="PasswordField" action="">
                   Password:
                   <input type="password" id="password" name="password">
-                  <input class="waves-effect waves-light btn" value="Log in" onclick="isValid();">
-                  <a href="hashes.html" class="waves-effect waves-light btn">Next problem!</a>
+                  <input class="waves-effect waves-light btn" value="Log in" id="myButton1">
+                  <a href="phppass.php" class="waves-effect waves-light btn">Next problem!</a>
                 </form>
               </div>  
             </div>
@@ -110,3 +123,28 @@
         
 
 
+
+
+<!-- <html lang="en">
+<head>
+<title>Problem 2</title>
+</head>
+<body>
+    
+    <button id="myButton1" class="float-left submit-button" >Home</button>
+
+<script type="text/javascript">
+    document.getElementById("myButton1").onclick = function () {
+        location.href = "http://ec2-34-216-92-116.us-west-2.compute.amazonaws.com/";
+    };
+</script>
+    
+    
+    <h1>Login Page</h1>
+    <form id="regform" method="post" action="">
+        <p>Username:<input type="text" name="mid" required="required" /></p>
+        <p>Password:<input type="password" name="mpassword" required="required" /></p>
+        <input type="submit" value="Login"/>
+    </form>
+</body>
+</html> -->
