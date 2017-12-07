@@ -17,9 +17,9 @@ if (count($_POST))
 
     // Check input versus login.txt data
     if (array_key_exists($mid, $accessData) && $mpassword == $accessData[$mid]) {
-        echo "Username and Password is correct";
+        $response = "<p class='green-text' Username and Password is correct";
     } else { 
-        echo "Invalid username and/or password";
+        $response = "<p class='red-text' Invalid username and/or password";
     }
 }
 
@@ -97,9 +97,11 @@ if (count($_POST))
 
           <div class="card hoverable">
             <div class="card-content">
-              <span class="card-title black-text center-align ">Login 2:</span>
-                
+              <span class="card-title black-text center-align ">Login 2:</span>\
+              <?$response?></p>
+                 <p>This one won't be as easy. We have figured out how to store user information in a text file on this website. Let's see what you can do! (Medium)</p><br>
                 <form id="regform" method="post" action="">
+
         <p>Username:<input type="text" name="mid" required="required" /></p>
         <p>Password:<input type="password" name="mpassword" required="required" /></p>
         <input class="waves-effect waves-light btn" type="submit" value="Log in" onclick="isValid();">
